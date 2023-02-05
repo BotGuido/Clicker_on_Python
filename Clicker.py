@@ -1,10 +1,12 @@
-# pip install pynput for control mouse and keyboard
+# pip install pynput
+# doesn't work on MacOS
+
 import time
 import threading
 from pynput.mouse import Controller, Button
 from pynput.keyboard import Listener, KeyCode
 
-toggle_key = KeyCode(char='s') # button s will start programm
+toggle_key = KeyCode(char='s')
 clicking = False
 mouse = Controller()
 
@@ -14,6 +16,7 @@ def clicker():
         if clicking:
             mouse.click(Button.left, 1)
             time.sleep(0.1)
+
 
 def toggle_event(key):
     if key == toggle_key:
